@@ -5,6 +5,8 @@ matplotlib
 scikit-learn
 catboost
 xgboost
+sklearn.model_selection
+dataclasses
 
 # -e . 
 # used to build the package in the current directory, like the final version of the imported packages to be used in the project.
