@@ -3,6 +3,7 @@ import sys
 from dataclasses import dataclass
 
 from catboost import CatBoostRegressor
+
 from sklearn.ensemble import (
     AdaBoostRegressor,
     GradientBoostingRegressor,
@@ -31,7 +32,7 @@ class ModelTrainer:
     def initiate_model_trainer(self,train_array,test_array):
         try:
             logging.info("Split training and test input data")
-            X_train,y_train,X_test,y_test=(
+            X_train , y_train , X_test , y_test = (
                 train_array[:,:-1],
                 train_array[:,-1],
                 test_array[:,:-1],
@@ -48,7 +49,10 @@ class ModelTrainer:
             }
             params={
                 "Decision Tree": {
-                    'criterion':['squared_error', 'friedman_mse', 'absolute_error', 'poisson'],
+                    'criterion':['squared_error', 
+                                 'friedman_mse',
+                                 'absolute_error',
+                                 'poisson'],
                     # 'splitter':['best','random'],
                     # 'max_features':['sqrt','log2'],
                 },
@@ -84,8 +88,12 @@ class ModelTrainer:
                 
             }
 
-            model_report:dict=evaluate_models(X_train=X_train,y_train=y_train,X_test=X_test,y_test=y_test,
-                                             models=models,param=params)
+            model_report:dict=evaluate_models(X_train = X_train,
+                                              y_train = y_train,
+                                              X_test = X_test,
+                                              y_test = y_test,
+                                              models = models,
+                                             param = params)
             
             ## To get best model score from dict
             best_model_score = max(sorted(model_report.values()))
