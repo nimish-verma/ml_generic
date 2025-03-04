@@ -128,8 +128,9 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.artifacts
+.artifacts/
 # added artifacts later when it was used in the data_ingestion.py file
+# .artifacts is a file and .artifacts/ is a directory
 .env
 .venv
 env/
