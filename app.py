@@ -12,7 +12,8 @@ application = Flask(__name__)
 #gives us the entry point to the application
 app = application
 
-## routes for the home page
+## routes for the home page right
+
 
 @app.route('/')
 def index():
