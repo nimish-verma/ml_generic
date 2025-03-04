@@ -129,6 +129,7 @@ celerybeat.pid
 
 # Environments
 .artifacts
+# added artifacts later when it was used in the data_ingestion.py file
 .env
 .venv
 env/
